@@ -186,7 +186,7 @@ def get_token() -> str:
 
     with open(filename, "r") as file:
         config = json.load(file)
-    token = config["BOT_TOKEN"]
+    token = os.getenv("BOT_TOKEN")
     if token == "0000000:aaaaaaaaaaaaaaaaaaaa":
         raise Exception("Please add your bot token, get it from https://t.me/botfather")
     return token
